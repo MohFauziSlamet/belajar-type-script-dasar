@@ -6,18 +6,28 @@ Kurikulum mengikuti materi **"TypeScript Dasar" oleh Eko Kurniawan Khannedy (Pro
 (sumber: `docs/TypeScript Dasar.pdf`, 140 halaman). Bahasa komunikasi utama: **Bahasa Indonesia**.
 
 ## Cara AI Membantu (Pedoman)
+- **MEMORI VAULT (WAJIB dibaca di awal sesi)**: `/Users/user/flywheel-vault/projects/belajar-type-script-dasar/memory.md`
+  (profil user, kamus Dart → TypeScript, progres, log sesi). Update Progress & Log Sesi di akhir sesi.
+- Prompt mentor lengkap: `docs/PROMPT_MENTOR_TS.md` (peran, aturan gaya materi, verifikasi).
+- User = Flutter developer mahir Dart, TypeScript level NOL. Jelaskan konsep baru selalu dengan format:
+  "Jika di Dart seperti ini → di TypeScript jadi seperti ini" (jangan pakai kata "padanan").
 - Bertindak sebagai **tutor**: jelaskan konsep singkat & jelas, lalu beri contoh kode.
 - Ikuti **alur kurikulum** di bawah. Jangan meloncat ke materi OOP/Generic/Decorator (materi lanjutan).
-- Selalu buat 2 file per topik: implementasi di `src/`, unit test di `tests/`.
+- Materi baru: SATU file `src/NN_topik.ts` gaya **define-then-print** (definisi → langsung
+  `console.log` + komentar output). Unit test di `tests/` bersifat **OPSIONAL** (latihan saja,
+  keputusan 2026-08-23). File lama tetap gaya function + test — jangan diubah paksa.
 - **Jangan hanya memberi jawaban** — bantu pengguna memahami dengan analogi/contoh sederhana.
 - Saat ada error TypeScript, jelaskan *penyebab* dan *cara memperbaikinya*, bukan cuma patch.
-- Verifikasi dengan: `npm test` (unit test) dan `npx tsc --noEmit` (type-check).
+- Verifikasi dengan: `npx tsx src/NN_topik.ts` (jalankan + cocokkan output) dan `npx tsc --noEmit` (type-check).
+  `npm test` hanya jika ada file test.
 - Referensi resmi: https://www.typescriptlang.org/ (sudah di-allow di settings).
 
 ## Tech Stack & Konfigurasi
 - **Runtime**: Node.js, ESM (`"type": "module"`)
 - **TypeScript** ^5.9.3, **tsconfig** mode ketat (`strict: true`)
-- **Testing**: Jest ^30 + Babel (`babel-jest` + `@babel/preset-env` + `@babel/preset-typescript`)
+- **tsx** (devDependency): jalankan file TS langsung tanpa kompilasi manual. CATATAN: `tsx`
+  hanya transpile, TIDAK type-check.
+- **Testing**: Jest ^30 + Babel (`babel-jest` + `@babel/preset-env` + `@babel/preset-typescript`) — opsional
 - **Catatan Babel**: Babel menghapus type annotation saat test → beberapa error TS tidak tertangkap
   di Jest. Karena itu jalankan `npx tsc --noEmit` secara berkala untuk type-check asli.
 - Ekstensi file sumber pakai `.tsx` (konvensi proyek), padahal isi bukan React JSX.
@@ -25,6 +35,7 @@ Kurikulum mengikuti materi **"TypeScript Dasar" oleh Eko Kurniawan Khannedy (Pro
 ## Perintah Penting
 | Tujuan | Perintah |
 |---|---|
+| Jalankan file materi langsung | `npx tsx src/NN_topik.ts` |
 | Jalankan semua unit test | `npm test` |
 | Jalankan satu file test | `npx jest tests/enum.test.ts` |
 | Type-check tanpa emit | `npx tsc --noEmit` |
@@ -33,7 +44,9 @@ Kurikulum mengikuti materi **"TypeScript Dasar" oleh Eko Kurniawan Khannedy (Pro
 
 ## Konvensi File
 - Implementasi: `src/<nomor>_<nama>.tsx` (mis. `1_say_hello.tsx`, `enum.tsx`)
-- Test: `tests/<nama>.test.ts`, import via path relatif `../src/<file>.tsx`
+- Materi baru gaya mentor: define-then-print (definisi → `console.log` + komentar output),
+  diakhiri RANGKUMAN (komentar) + LATIHAN sederhana
+- Test (opsional): `tests/<nama>.test.ts`, import via path relatif `../src/<file>.tsx`
 - Pola test: `describe("<Topik>")` → `it("should ...", () => { expect(...).toBe(...) })`
 - Semua export pakai `export function ...` (named export).
 
