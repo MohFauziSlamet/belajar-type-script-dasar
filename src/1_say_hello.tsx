@@ -1,4 +1,6 @@
-// === 1. SAY HELLO — file TypeScript pertama ===
+// ========================================
+// SAY HELLO — FILE TYPESCRIPT PERTAMA
+// ========================================
 // Topik: bentuk function, type annotation, template literal, console.log.
 // (PDF "TypeScript Dasar": bab Say Hello Function)
 
@@ -66,7 +68,9 @@ const greet = (name: string): string => `Hi ${name}`;
 console.log(greet("Fauzi")); // Hi Fauzi
 
 
-// ================= RANGKUMAN =================
+// ========================================
+// RANGKUMAN
+// ========================================
 // 1. Function TS:  function nama(param: tipe): tipeReturn { ... }
 //    Kalimat kunci: "tipe ditulis SETELAH nama" — kebalikan kebiasaan Dart.
 // 2. Template literal: backtick ` ` + ${ekspresi}.
@@ -78,11 +82,35 @@ console.log(greet("Fauzi")); // Hi Fauzi
 // Cara menjalankan file ini:  npx tsx src/1_say_hello.tsx
 
 
-// ================= LATIHAN =================
+// ========================================
+// LATIHAN (+ JAWABAN)
+// ========================================
 // 1. Buat function sayGoodbye(name: string): string yang mengembalikan
 //    "Goodbye Fauzi" lalu console.log hasilnya.
+//
+//    JAWABAN:
+function sayGoodbye(name: string): string {
+    return `Goodbye ${name}`;
+}
+console.log(sayGoodbye("Fauzi")); // Goodbye Fauzi
+
 // 2. Buat function greetFull(name: string, city: string): string yang
 //    mengembalikan "Halo Fauzi dari Bandung" (gabung dua parameter
 //    dalam satu template literal).
+//
+//    JAWABAN:
+function greetFull(name: string, city: string): string {
+    return `Halo ${name} dari ${city}`;
+}
+console.log(greetFull("Fauzi", "Bandung")); // Halo Fauzi dari Bandung
+
 // 3. Eksperimen jebakan: tulis console.log(`Hi $nama`) tanpa kurawal,
 //    jalankan, lihat hasilnya — paham kenapa ${} wajib.
+//
+//    JAWABAN:
+const namaLatihan = "Fauzi";
+console.log(`Hi $namaLatihan`);  // Hi $namaLatihan   ← NAMA VARIABELNYA YANG TERCUKUR, BUKAN NILAINYA
+console.log(`Hi ${namaLatihan}`); // Hi Fauzi         ← dengan ${} baru nilainya yang masuk
+// Pelajaran: '$var' tanpa {} adalah string biasa — TS tidak menganggapnya
+// variabel sama sekali. Tidak ada error, diam-diam salah — jebakan paling
+// berbahaya karena program tetap jalan.

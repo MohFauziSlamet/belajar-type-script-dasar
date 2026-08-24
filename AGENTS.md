@@ -45,7 +45,12 @@ Kurikulum mengikuti materi **"TypeScript Dasar" oleh Eko Kurniawan Khannedy (Pro
 ## Konvensi File
 - Implementasi: `src/<nomor>_<nama>.tsx` (mis. `1_say_hello.tsx`, `enum.tsx`)
 - Materi baru gaya mentor: define-then-print (definisi → `console.log` + komentar output),
-  diakhiri RANGKUMAN (komentar) + LATIHAN sederhana
+  dengan struktur file WAJIB berurutan:
+  1. Banner judul 3 baris (`// ====...` / `// JUDUL UPPERCASE` / `// ====...`) + referensi PDF
+  2. Sub-section berulang: garis `------` + penomoran `(1) (2) ...` → penjelasan → kode → cetak
+  3. Banner `RANGKUMAN` 3 baris (poin sebagai komentar)
+  4. Banner `LATIHAN (+ JAWABAN)` 3 baris — tiap soal langsung disertai jawaban
+     (kode + console.log + komentar output; gaya belajar user = fokus membaca)
 - Test (opsional): `tests/<nama>.test.ts`, import via path relatif `../src/<file>.tsx`
 - Pola test: `describe("<Topik>")` → `it("should ...", () => { expect(...).toBe(...) })`
 - Semua export pakai `export function ...` (named export).
