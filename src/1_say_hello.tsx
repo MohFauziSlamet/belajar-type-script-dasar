@@ -21,6 +21,21 @@
 //   (Dart: tipe di depan → String sayHello(...))
 // ------------------------------------------------------------------
 
+// CATATAN keyword `export` (di depan function):
+// Kalau tidak ada `export`, function ini HANYA bisa dipakai di file ini.
+// Dengan `export`, file lain boleh mengambilnya — contoh nyatanya: file test
+// tests/say-hello.test.ts memanggil function ini lewat baris:
+//     import { sayHello } from "../src/1_say_hello.tsx";
+//
+// Jika di Dart seperti ini: semua yang public di sebuah file otomatis bisa
+// di-import file lain (cukup `import 'nama_file.dart';` — tanpa keyword).
+// di TypeScript jadi seperti ini: TIDAK otomatis — harus ditandai eksplisit
+// dengan `export` dulu, baru bisa diambil pakai `import`.
+//
+// Pembahasan lengkap import/export (modules) MENYUSUL di Bagian 5
+// (JavaScript Feature). Sekarang cukup pahami: `export` = "boleh dipakai
+// file lain".
+
 export function sayHello(name: string): string {
     return `Hello ${name}`;
 }
