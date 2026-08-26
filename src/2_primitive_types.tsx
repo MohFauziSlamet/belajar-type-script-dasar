@@ -63,6 +63,7 @@ console.log(berat * 2);          // 125
 // di TypeScript:    harga.toFixed(2)
 const harga: number = 15000;
 console.log(harga.toFixed(2)); // 15000.00
+console.log(harga.toFixed(1)); // 15000.0
 
 
 // ------------------------------------------------------------------
