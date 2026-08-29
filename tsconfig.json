@@ -28,8 +28,16 @@
     "declaration": true,
     "declarationMap": true,
     // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    // noUncheckedIndexedAccess DIMATIKAN sengaja (keputusan 2026-08-26):
+    // flag ini membuat arr[i] bertipe "T | undefined" sehingga latihan dasar
+    // seperti a + arr[0] error sebelum materi null-handling diajarkan.
+    // strict: true tetap NYALA (itu standar kelas ini).
+    // "noUncheckedIndexedAccess": true,
+    // exactOptionalPropertyTypes DIMATIKAN sengaja (keputusan 2026-08-27,
+    // sesi 19): flag ini menolak `alamat: undefined` eksplisit pada property
+    // optional (TS2375) — padahal itu pola standar TS dan mengikuti perilaku
+    // yang diajarkan materi. strict: true tetap NYALA.
+    // "exactOptionalPropertyTypes": true,
     // Style Options
     // "noImplicitReturns": true,
     // "noImplicitOverride": true,

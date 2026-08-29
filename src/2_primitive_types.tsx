@@ -186,11 +186,11 @@ console.log(totalHarga(18000, 3)); // 54000
 //
 //    JAWABAN: error yang muncul kira-kira seperti ini:
 //    ---------------------------------------------------------------
-//    src/2_primitive_types.tsx:135:1
+//    src/2_primitive_types.tsx:138:1
 //    error TS2322: Type 'string' is not assignable to type 'number'.
 //    ---------------------------------------------------------------
 //    Cara bacanya (dari kiri):
-//    - lokasi file + barisnya          → src/2_primitive_types.tsx:135
+//    - lokasi file + barisnya          → src/2_primitive_types.tsx:138
 //    - kode error TS2322               → "assignment" salah tipe
 //    - Type 'string' (nilai baru)      → "habis" itu string
 //    - not assignable to type 'number' → tidak bisa masuk ke variabel number

@@ -69,50 +69,52 @@ Legenda: [x] selesai · [ ] belum
 ### Bagian 2 — Tipe Data
 - [x] Tipe Data Primitif — `number`, `boolean`, `string` → `tests/data-type.test.ts`
 - [x] Babel TypeScript (jenis stripping type, perlu `tsc` rutin)
-- [x] Tipe Data Array — `TipeData[]` / `Array<TipeData>` → `tests/data-type-array.test.ts`
-- [ ] Read Only Array — `ReadonlyArray<TipeData>`
-- [ ] Tuple — array dengan panjang & tipe per index tetap
-- [x] Tipe Data Any → `tests/data-type-any.test.ts`
-- [x] Union Type (`a | b`) → `tests/data-type-union.test.ts`
-- [ ] Menggunakan Union Type (cek dengan `typeof`)
-- [x] Type Alias (`type Nama = {...}`) → `tests/data-type-alias.test.ts`
-- [ ] Type Alias untuk Union Type
-- [x] Object Type → `tests/data-type-object.test.ts`
-- [x] Optional Properties (`?`) → `tests/optional-property.test.ts`
-- [x] Enum (default jadi number) → `src/enum.tsx`, `tests/enum.test.ts`
-- [ ] Enum sebagai String
-- [x] Null dan Undefined → `src/null-and-undefined.tsx`, `tests/null-and-undefined.test.ts`
+- [x] Tipe Data Array — `TipeData[]` / `Array<TipeData>` → `src/3_array.tsx`, `tests/data-type-array.test.ts`
+- [x] Read Only Array — `ReadonlyArray<TipeData>` → `src/4_readonly_array.tsx`
+- [x] Tuple — array dengan panjang & tipe per index tetap → `src/5_tuple.tsx`
+- [x] Tipe Data Any → `src/6_any.tsx`, `tests/data-type-any.test.ts`
+- [x] Union Type (`a | b`) → `src/7_union_type.tsx`, `tests/data-type-union.test.ts`
+- [x] Menggunakan Union Type (cek dengan `typeof`) → `src/8_using_union.tsx`
+- [x] Type Alias (`type Nama = {...}`) → `src/9_type_alias.tsx`, `tests/data-type-alias.test.ts`
+- [x] Type Alias untuk Union Type → `src/10_type_alias_union.tsx`
+- [x] Object Type → `src/11_object_type.tsx`, `tests/data-type-object.test.ts`
+- [x] Optional Properties (`?`) → `src/12_optional_properties.tsx`, `tests/optional-property.test.ts`
+- [x] Enum (default jadi number) + Enum sebagai String → `src/13_enum.tsx`, `tests/enum.test.ts`
+- [x] Null dan Undefined → `src/14_null_and_undefined.tsx`, `tests/null-and-undefined.test.ts`
 
 ### Bagian 3 — Interface & Tipe Lanjutan
-- [ ] Interface (`interface Nama {...}`)
-- [ ] Readonly Properties
-- [ ] Function Interfaces
-- [ ] Indexable Interface (Array & Object)
-- [ ] Extending Interface (`extends`)
-- [ ] Function di Interface (method sebagai attribute)
-- [ ] Intersection Types (`&`)
-- [ ] Type Assertions (`as`)
+- [x] Interface (`interface Nama {...}`) → `src/15_interface.tsx`
+- [x] Readonly Properties → `src/16_readonly_properties.tsx`
+- [x] Function Interfaces → `src/17_function_interfaces.tsx`
+- [x] Indexable Interface (Array & Object) → `src/18_indexable_interface.tsx`
+- [x] Extending Interface (`extends`) → `src/19_extending_interface.tsx`
+- [x] Function di Interface (method sebagai attribute) → `src/20_function_in_interface.tsx`
+- [x] Intersection Types (`&`) → `src/21_intersection_types.tsx`
+- [x] Type Assertions (`as`) → `src/22_type_assertions.tsx`
 
 ### Bagian 4 — Function
-- [ ] Function (parameter bertipe + return type)
-- [ ] Function Parameter (rest, default, optional `?`)
-- [ ] Function Overloading
-- [ ] Function sebagai Parameter (callback)
+- [x] Function (parameter bertipe + return type) → `src/23_function.tsx`
+- [x] Function Parameter (rest, default, optional `?`) → `src/24_function_parameter.tsx`
+- [x] Function Overloading → `src/25_function_overloading.tsx`
+- [x] Function sebagai Parameter (callback) → `src/26_function_as_parameter.tsx`
 
 ### Bagian 5 — Control Flow (sama seperti JavaScript)
-- [ ] If Statement
-- [ ] Ternary Operator
-- [ ] Switch Statement
-- [ ] For Loop (for / for-in / for-of)
-- [ ] While Loop
-- [ ] Do While Loop
-- [ ] Break dan Continue
-- [ ] JavaScript Feature (operator, destructuring, modules, dll)
+- [x] If Statement → `src/27_if_statement.tsx`
+- [x] Ternary Operator → `src/28_ternary_operator.tsx`
+- [x] Switch Statement → `src/29_switch_statement.tsx`
+- [x] For Loop (for / for-in / for-of) → `src/30_for_loop.tsx`
+- [x] While Loop → `src/31_while_loop.tsx`
+- [x] Do While Loop → `src/32_do_while_loop.tsx`
+- [x] Break dan Continue (break/continue di loop, label `outer:`, jebakan continue-while) → `src/33_break_continue.tsx`
+- [x] JavaScript Feature (operator, destructuring, `**`, with statement usang, any sebagai jalan keluar) → `src/34_javascript_feature.tsx`
 
-### Materi Lanjutan (di luar lingkup kelas Dasar)
-- TypeScript Object Oriented Programming
-- TypeScript Generic
-- TypeScript Decorator
+### Materi Lanjutan
+- **TypeScript OOP — repo TERPISAH sejajar**: `../belajar-type-script-oop/`
+  (dipindah 2026-08-29 sesi 44; kurikulum mengikuti
+  `docs/TypeScript Object Oriented Programming.pdf` DI REPO OOP tersebut;
+  memori vault: `belajar-type-script-oop`)
+- TypeScript Generic (menyusul setelah OOP)
+- TypeScript Decorator (menyusul setelah Generic)
 
 ## Catatan Tambahan
 - `dist/` berisi hasil kompilasi (jangan edit manual).
