@@ -12,7 +12,6 @@
 // Jika di Dart seperti ini:
 //     var names = <String>['Fauzi', 'Azka', 'Budi'];
 // di TypeScript jadi seperti ini:
-//
 // Cara 1 (paling umum):  string[]   ← tipe + kurung siku
 // Cara 2 (gaya generic): Array<string>
 // Dua-duanya hasilnya SAMA — Dart juga begini: List<String> vs List<String>
