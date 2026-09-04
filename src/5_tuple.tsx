@@ -29,6 +29,27 @@ console.log(mahasiswa); // [ 'Fauzi', 25 ]
 let koordinat: [number, number] = [100, 200]; // semua posisi number juga sah
 console.log(koordinat); // [ 100, 200 ]
 
+let mahasiswas: readonly [string, number][] = [
+    ["Fauzi", 25],
+    ["Budi", 22],
+    ["Azka", 5],
+];
+
+console.log(mahasiswas);      // [ [ 'Fauzi', 25 ], [ 'Budi', 22 ], [ 'Azka', 5 ] ]
+console.log(mahasiswa);       // ❌ typo — hanya cek Anda membaca ;)
+console.log(mahasiswas[0]);   // [ 'Fauzi', 25 ]   ← ambil 1 kotak (tuple)
+console.log(mahasiswas[0][0]); // Fauzi            ← kotak pertama, sekat pertama
+console.log(mahasiswas[0][1]); // 25               ← kotak pertama, sekat kedua
+console.log(mahasiswas.length); // 3               ← jumlah kotak di rak
+
+// Loop semua mahasiswa (for-of dari file 30):
+for (const [nama, umur] of mahasiswas) {   // destructuring per kotak
+    console.log(`${nama} berumur ${umur}`);
+}
+// Fauzi berumur 25
+// Budi berumur 22
+// Azka berumur 5
+
 
 // ------------------------------------------------------------------
 // (2) KONTRAKNYA DITEGAKKAN — URUTAN & PANJANG HARUS PAS
