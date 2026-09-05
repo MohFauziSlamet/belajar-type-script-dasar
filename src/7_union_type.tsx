@@ -39,25 +39,40 @@ console.log(status); // true
 // ------------------------------------------------------------------
 // (2) DI LUAR DAFTAR = DITOLAK (INI BEDANYA DENGAN any)
 //
-// Union tanpa array & Date → memberi array ditolak compiler.
-// Bandingkan file 6: any menerima SEMUA tipe tanpa protes.
+// Lanjut pakai variabel status di sub-section (1) — daftarnya
+// string | number | boolean. Sekarang coba beri nilai yang TIPEnya
+// tidak ada di daftar: compiler MENOLAK dengan error TS2322.
+// Bandingkan file 6: assignment yang SAMA (data = [1, 2, 3]) sama
+// sekali dibiarkan lewat — any tidak memeriksa apa pun.
 // Union = kebebasan yang TERBATAS dan terdaftar.
-//
-// CATATAN: union memeriksa TIPE, bukan nilainya. Angka berapa pun
-// (123, 3.5, -9) tetap satu tipe: number — semua diterima karena
-// number ada di daftar.
 // ------------------------------------------------------------------
 
-// status = [1, 2, 3];
-// ❌ ERROR kalau di-uncomment:
-//    error TS2322: Type 'number[]' is not assignable to type
-//    'string | number | boolean'.  (array memang tidak ada di daftar.
-//    Angka boleh, tapi KUMPULAN angka adalah tipe lain: number[])
-
+// Yang paling jelas ditolak: Date — tipe yang sama sekali
+// tidak ada di daftar.
 // status = new Date();
-// ❌ ERROR juga — Date tidak ada di daftar:
+// ❌ ERROR kalau di-uncomment:
 //    error TS2322: Type 'Date' is not assignable to type
 //    'string | number | boolean'.
+
+// Yang ini kelihatannya boleh — isinya kan angka semua:
+// status = [1, 2, 3];
+// ❌ ERROR juga:
+//    error TS2322: Type 'number[]' is not assignable to type
+//    'string | number | boolean'.
+//    (cara bacanya: sisi kanan bertipe number[] — tipe ARRAY —
+//    dan array tidak terdaftar di daftar union)
+
+// Tapi yang ini justru DITERIMA — padahal angka 3.5 tidak pernah
+// disebut di daftar:
+status = 3.5; // ✅ tipenya number, dan number ada di daftar
+console.log(status); // 3.5
+
+// CATATAN: union memeriksa TIPE, bukan NILAI. Itulah kenapa:
+// - 3.5 diterima  → nilainya tak dikenal, tapi TIPEnya (number)
+//   ada di daftar. Angka berapa pun (123, 3.5, -9) tetap satu
+//   tipe: number — semua diterima.
+// - [1, 2, 3] ditolak → tiap angkanya boleh, tapi KUMPULAN angka
+//   bertipe number[] — tipe yang tidak terdaftar.
 
 
 // ------------------------------------------------------------------
@@ -193,7 +208,7 @@ console.log(riwayat[1]); // 18000
 //
 //    JAWABAN: error yang muncul:
 //    ---------------------------------------------------------------
-//    src/7_union_type.tsx:51:1
+//    src/7_union_type.tsx(58,1)
 //    error TS2322: Type 'number[]' is not assignable to type
 //    'string | number | boolean'.
 //    ---------------------------------------------------------------

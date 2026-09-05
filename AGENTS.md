@@ -108,6 +108,36 @@ Legenda: [x] selesai · [ ] belum
 - [x] Break dan Continue (break/continue di loop, label `outer:`, jebakan continue-while) → `src/33_break_continue.tsx`
 - [x] JavaScript Feature (operator, destructuring, `**`, with statement usang, any sebagai jalan keluar) → `src/34_javascript_feature.tsx`
 
+### Latihan Review Materi (mulai 2026-09-04, sesi 45)
+- Folder `src/latihan/<level>/` (beginner/middle/advance/expert), penamaan
+  `<level><nomor>_<nama>.tsx` (mis. `beginner/b1_kalkulator_diskon.tsx`) —
+  penyimpangan sadar dari konvensi `NN_topik.tsx` karena ini latihan gabungan,
+  bukan materi baru. Struktur per scope level dipakai sejak sesi 46.
+- Struktur tiap file: banner JUDUL (level + konsep + materi) → SOAL → JAWABAN
+  (define-then-print + komentar output) → RANGKUMAN.
+- Rencana 4 level × 5 program (beginner/middle/advance/expert), tiap level selesai
+  direview subagent sebelum lanjut.
+- [x] **BEGINNER** — `b1` kalkulator diskon, `b2` konversi suhu & BMI, `b3` daftar belanja
+  array (+ReadonlyArray), `b4` grade ujian, `b5` kartu profil pelanggan (sesi 45,
+  review subagent APPROVE WITH FIXES → 4 revisi diterapkan)
+- [ ] MIDDLE (m1 kasir union, m2 stok gudang type alias, m3 statistik tuple,
+  m4 member & poin enum, m5 buku kontak null) — menyusul
+  → SELESAI 2026-09-05 sesi 47 di `src/latihan/middle/` (review subagent
+  APPROVE WITH FIXES → 5 revisi diterapkan: analogi record Dart 3+ di m3,
+  literal blok error m3 dilengkapi biar murni TS2540, demo `?.` nyata di m5,
+  redaksi do-while, distingsi TS18047/18048)
+- [ ] ADVANCE (a1 order cafe interface, a2 pipeline callback, a3 inventaris indexable,
+  a4 formatter overload, a5 decoder JSON any+as) — menyusul
+  → SELESAI 2026-09-05 sesi 48 di `src/latihan/advance/` (review subagent
+  APPROVE WITH FIXES → 2 revisi fakta Dart: "implements A, B" bukan
+  "extends keduanya" di a1, jsonDecode return dynamic di a5)
+- [ ] EXPERT (e1 mini POS, e2 manajemen karyawan, e3 vending do-while, e4 booking
+  kursi indexable, e5 capstone laporan penjualan) — menyusul
+  → SELESAI 2026-09-05 sesi 49 di `src/latihan/expert/` (review subagent
+  APPROVE WITH FIXES → 2 selaraskan SOAL/JAWABAN; insiden TS2353 excess
+  property tertangkap tsc saat eksekusi → diperbaiki + jadi komentar
+  edukatif). SELURUH LATIHAN 4 LEVEL TUNTAS 20/20.
+
 ### Materi Lanjutan
 - **TypeScript OOP — repo TERPISAH sejajar**: `../belajar-type-script-oop/`
   (dipindah 2026-08-29 sesi 44; kurikulum mengikuti
